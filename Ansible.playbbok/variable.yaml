@@ -1,0 +1,10 @@
+-name: variables for playbook
+ hosts: localhost
+ vars:
+   course: "devops"
+   Trainer: "Sivakumar"
+   Duration: "110HRS"
+Tasks:
+- name: check variables
+  ansible.builtin.debug:
+    msg: "Hi, iam learning {{Course}}, Trainer is {{Sivakumar}}, Duration is {{110HRS}}"
