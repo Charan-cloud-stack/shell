@@ -1,0 +1,16 @@
+- name: variables from prompt
+  hosts: localhost
+  vars_prompt:
+  - name: USERNAME
+    prompt: please enter username
+    private: false #user can see what they are entering
+  - name: PASSWORD
+    prompt: please enter Password
+    private: true #user can't see what they are entering
+  tasks:
+  - name: print and check the values
+    ansible.builtin.debug:
+     msg: "username is {{USERNAME}}, password is: {{PASSWORD}}"  #USERNAME and PASSWORD variables value we can mention in command line 
+
+#/ Here in this playbook we are asking user to enter his username and password and giving variable value i.e,(USERNAE & PASSWORD) in the
+ #ansible playbook command itself

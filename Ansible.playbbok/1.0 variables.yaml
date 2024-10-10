@@ -1,0 +1,6 @@
+course: "devops"
+Trainer: "Sivakumar"
+Duration: "110HRS"
+
+## here we are defining variables and attaching this 1.0 varaibles into the 2.0 variables under 
+#vars_files section.

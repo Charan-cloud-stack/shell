@@ -1,0 +1,13 @@
+- name: loops
+  hosts: localhost
+  tasks:
+  - name: print persons
+    ansible.builtin.debug:
+     msg: "Hello {{item}}" #item is default built in function for loops
+    loop:
+    - Ramesh
+    - Suresh
+    - Robert
+    - Raheem
+
+    #item will now read each and every value under the loop

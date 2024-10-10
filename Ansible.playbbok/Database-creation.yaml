@@ -1,0 +1,6 @@
+-name: create my_sql server
+ host: db_server
+ tasks:
+ - name: create database
+   mysql_db:
+    name: mydatabase

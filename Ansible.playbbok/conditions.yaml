@@ -1,0 +1,16 @@
+-name: conditions
+ host: localhost
+ become: yes
+ tasks:
+- name: check roboshop user exists or not
+  ansible.builtin.command: id roboshop
+  register: user #user is variable name in above roboshop output will store in the below line user
+  ignore_errors: true #the ansible code will even after we get errors
+- name: print variable value
+ansible.builtin.debug:
+ msg: "user output is: {{user}}"
+
+- name: crate user
+  ansible.builtin.user:
+    name: roboshop
+  when: user.rc != 0
